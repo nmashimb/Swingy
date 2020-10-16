@@ -36,7 +36,7 @@ public class GuiView extends JFrame
     public GuiView(){
         startGamePanel = new JPanel();
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(400, 400);
+        this.setSize(600, 600);
 
         startGameOptions = new JTextArea("1. Create a hero\n2. Select a previously created hero.");
         startGameOptions.setEditable(false);

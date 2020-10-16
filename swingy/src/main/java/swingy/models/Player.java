@@ -1,8 +1,13 @@
 package swingy.models;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+
 public class Player
 {
     @NotNull(message = "player name cannot be null")
+    @NotBlank(message = "Name may not be blank")
+    @NotEmpty(message = "Name may not be empty")
     private String playerName;
     private String playerClass;
     private String playerWeapon;

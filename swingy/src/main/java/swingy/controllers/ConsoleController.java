@@ -39,17 +39,10 @@ public class ConsoleController
         while (nameValid == false) {
 
             String name = in.nextLine();
-            //name = name.trim();
             player.setPlayerName(name);
             if (validate.validateClass(player) == true){
                 nameValid = true;
             }
-            /*if (!name.isEmpty()) {
-                player.setPlayerName(name);
-                nameValid = true;
-            }
-            else
-                consoleView.printArgument("INVALID!! TRY AGAIN!!");*/
         }
         while (validClass == false){
             consoleView.stepTwo();

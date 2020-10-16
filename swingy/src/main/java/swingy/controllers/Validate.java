@@ -8,9 +8,11 @@ import java.util.Set;
 import swingy.models.Player;
 
 public class Validate {
-    private  Validator validator;
+    private Validator validator;
+    private ValidatorFactory factory;
+
     public Validate(){
-        ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
+        factory = Validation.buildDefaultValidatorFactory();
         validator = factory.getValidator();
     }
 
