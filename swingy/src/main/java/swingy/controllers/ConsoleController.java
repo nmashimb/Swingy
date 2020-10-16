@@ -162,6 +162,14 @@ public class ConsoleController
         
         try{
             filename = new File("players.txt");
+            try {
+                filename.createNewFile();
+            }
+            catch (IOException e) {
+                System.out.println("An error occurred.");
+                e.printStackTrace();
+            }
+
             boolean exists = false;
             Scanner readPlayerText = new Scanner(filename);
             if (readPlayerText.hasNextLine()) {

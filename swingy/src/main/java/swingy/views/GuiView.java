@@ -206,6 +206,7 @@ public class GuiView extends JFrame
         continueGame = new JButton("CONTINUE...");
 
         playerStatsPanel.add(playerStatsTextArea);
+        playerStatsPanel.setEditable(false);
         playerStatsPanel.add(continueGame);
         this.add(playerStatsPanel);
     }

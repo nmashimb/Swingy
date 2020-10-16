@@ -38,6 +38,13 @@ public class GuiController
         
         try{
             filename = new File("players.txt");
+            try {
+                filename.createNewFile();
+            }
+            catch (IOException e) {
+                System.out.println("An error occurred.");
+                e.printStackTrace();
+            }
             boolean exists = false;
             Scanner readPlayerText = new Scanner(filename);
             if (readPlayerText.hasNextLine()) {
@@ -51,7 +58,7 @@ public class GuiController
                 }
                 if (exists == false){
                     myWriter = new FileWriter(filename, true); 
-                    myWriter.write(player.getPlayerName()+" "+player.getPlayerClass()+" "+player.getPlayerLevel()+" "+player.getPlayerExperiance()+" "+player.getPlayerAttack()+" "+player.getPlayerDefense()+" "+player.getPlayerHP()+"\n"); //add weapon,armor
+                    myWriter.write(player.getPlayerName()+" "+player.getPlayerClass()+" "+player.getPlayerLevel()+" "+player.getPlayerExperiance()+" "+player.getPlayerAttack()+" "+player.getPlayerDefense()+" "+player.getPlayerHP()+"\n");
                     myWriter.close();
                     readPlayerText.close();
                 }
@@ -59,7 +66,7 @@ public class GuiController
             else {
                 try {
                     myWriter = new FileWriter(filename);
-                    myWriter.write(player.getPlayerName()+" "+player.getPlayerClass()+"\n"); //add weapon,armor
+                    myWriter.write(player.getPlayerName()+" "+player.getPlayerClass()+" "+player.getPlayerLevel()+" "+player.getPlayerExperiance()+" "+player.getPlayerAttack()+" "+player.getPlayerDefense()+" "+player.getPlayerHP()+"\n"); //add weapon,armor
                     myWriter.close();
                     readPlayerText.close();
                 }
