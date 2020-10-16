@@ -1,6 +1,0 @@
-1 Giant 2 1000 12 5 8
-www Alph 1 0 5 10 10
-nyi Witcher 1 0 7 8 10
-   Giant 1 0 10 5 10
-  Giant 1 0 10 5 10
-h Giant 1 0 10 5 10
