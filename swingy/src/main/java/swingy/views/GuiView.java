@@ -125,6 +125,9 @@ public class GuiView extends JFrame
         return selectWitcher.getText();
     }
 
+    public JPanel getStepOnePanel(){
+        return stepOnePanel;
+    }
     public JPanel getStepTwoPanel(){
         return stepTwoPanel;
     }

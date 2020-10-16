@@ -18,10 +18,12 @@ public class GuiController
     private Scanner in = new Scanner(System.in);
     private FileWriter myWriter;
     private File filename;
+    private Validate validate;
 
     public GuiController(Player player, GuiView guiView){
         this.player = player;
         this.guiView = guiView;
+        validate = new Validate();
         map = new Map(player.getPlayerLevel());
         this.guiView.addOptionOneListener(new CreateHeroButtonListener());
         this.guiView.addOptionTwoListener(new SelectHeroButtonListener());
@@ -206,16 +208,19 @@ public class GuiController
     class CreateHeroNameButtonListener implements ActionListener 
     {
         public void actionPerformed(ActionEvent e) {
-            
-            if (!guiView.getPlayerNameField().isEmpty()){
+            player.setPlayerName(guiView.getPlayerNameField());
+            if (!validate.validateClass(player) == false){
                 player.setPlayerName(guiView.getPlayerNameField());
                 guiView.stepTwo();
                 guiView.addGiantButtonListener(new GiantClassButtonListener());
                 guiView.addAlphButtonListener(new AlphClassButtonListener());
                 guiView.addWitcherButtonListener(new WitcherClassButtonListener());
             }
-            else
+            else{
+                guiView.getStepOnePanel().setVisible(false);
                 guiView.stepOne();
+                guiView.addNameButtonListener(new CreateHeroNameButtonListener());
+            }
         }
     }
 
