@@ -162,6 +162,7 @@ public class GuiView extends JFrame
     //SETTERS
     public void setPlayerStatsTextArea(String playerCurrentStats){
         this.playerStatsTextArea = new JTextArea(playerCurrentStats);
+         this.playerStatsTextArea.setVisible(false);
     }
 
     //CREATE PLAYER STEPS
@@ -206,7 +207,6 @@ public class GuiView extends JFrame
         continueGame = new JButton("CONTINUE...");
 
         playerStatsPanel.add(playerStatsTextArea);
-        playerStatsPanel.setEditable(false);
         playerStatsPanel.add(continueGame);
         this.add(playerStatsPanel);
     }

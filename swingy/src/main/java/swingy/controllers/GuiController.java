@@ -461,14 +461,18 @@ public class GuiController
             if (player.getPlayerYPos() != map.getDimensions() - 1){
                 map.removePlayerOnMap(player.getPlayerXPos(), player.getPlayerYPos());
                 player.setPlayerYPos(player.getPlayerYPos() + 1);
-                map.placePlayerOnMap(player.getPlayerXPos(), player.getPlayerYPos());
-                guiView.getMapPanel().setVisible(false);
-                guiView.showMapAndDirectionsGui(map.getMap(), map.getDimensions());
-
-                guiView.addGoNorthButtonListener(new GoNorthButtonListener());
-                guiView.addGoEastButtonListener(new GoEastButtonListener());
-                guiView.addGoSouthButtonListener(new GoSouthButtonListener());
-                guiView.addGoWestButtonListener(new GoWestButtonListener());
+                if (map.spotOccuppied(player.getPlayerXPos(), player.getPlayerYPos()))
+                    encounteredVillain();
+                else{
+                    map.placePlayerOnMap(player.getPlayerXPos(), player.getPlayerYPos());
+                    guiView.getMapPanel().setVisible(false);
+                    guiView.showMapAndDirectionsGui(map.getMap(), map.getDimensions());
+                
+                    guiView.addGoNorthButtonListener(new GoNorthButtonListener());
+                    guiView.addGoEastButtonListener(new GoEastButtonListener());
+                    guiView.addGoSouthButtonListener(new GoSouthButtonListener());
+                    guiView.addGoWestButtonListener(new GoWestButtonListener());
+                } 
             }
             else {
                 player.setPlayerExperiance(player.getPlayerLevel());
@@ -497,14 +501,18 @@ public class GuiController
             if (player.getPlayerXPos() != map.getDimensions() - 1){
                 map.removePlayerOnMap(player.getPlayerXPos(), player.getPlayerYPos());
                 player.setPlayerXPos(player.getPlayerXPos() + 1);
-                map.placePlayerOnMap(player.getPlayerXPos(), player.getPlayerYPos());
-                guiView.getMapPanel().setVisible(false);
-                guiView.showMapAndDirectionsGui(map.getMap(), map.getDimensions());
-
-                guiView.addGoNorthButtonListener(new GoNorthButtonListener());
-                guiView.addGoEastButtonListener(new GoEastButtonListener());
-                guiView.addGoSouthButtonListener(new GoSouthButtonListener());
-                guiView.addGoWestButtonListener(new GoWestButtonListener());
+                if (map.spotOccuppied(player.getPlayerXPos(), player.getPlayerYPos()))
+                    encounteredVillain();
+                else{
+                    map.placePlayerOnMap(player.getPlayerXPos(), player.getPlayerYPos());
+                    guiView.getMapPanel().setVisible(false);
+                    guiView.showMapAndDirectionsGui(map.getMap(), map.getDimensions());
+                
+                    guiView.addGoNorthButtonListener(new GoNorthButtonListener());
+                    guiView.addGoEastButtonListener(new GoEastButtonListener());
+                    guiView.addGoSouthButtonListener(new GoSouthButtonListener());
+                    guiView.addGoWestButtonListener(new GoWestButtonListener());
+                } 
             }
             else {
                 player.setPlayerExperiance(player.getPlayerLevel());
@@ -534,14 +542,18 @@ public class GuiController
             if (player.getPlayerYPos() != 0){
                 map.removePlayerOnMap(player.getPlayerXPos(), player.getPlayerYPos());
                 player.setPlayerYPos(player.getPlayerYPos() - 1);
-                map.placePlayerOnMap(player.getPlayerXPos(), player.getPlayerYPos());
-                guiView.getMapPanel().setVisible(false);
-                guiView.showMapAndDirectionsGui(map.getMap(), map.getDimensions());
-
-                guiView.addGoNorthButtonListener(new GoNorthButtonListener());
-                guiView.addGoEastButtonListener(new GoEastButtonListener());
-                guiView.addGoSouthButtonListener(new GoSouthButtonListener());
-                guiView.addGoWestButtonListener(new GoWestButtonListener());
+                if (map.spotOccuppied(player.getPlayerXPos(), player.getPlayerYPos()))
+                    encounteredVillain();
+                else{
+                    map.placePlayerOnMap(player.getPlayerXPos(), player.getPlayerYPos());
+                    guiView.getMapPanel().setVisible(false);
+                    guiView.showMapAndDirectionsGui(map.getMap(), map.getDimensions());
+                
+                    guiView.addGoNorthButtonListener(new GoNorthButtonListener());
+                    guiView.addGoEastButtonListener(new GoEastButtonListener());
+                    guiView.addGoSouthButtonListener(new GoSouthButtonListener());
+                    guiView.addGoWestButtonListener(new GoWestButtonListener());
+                }
             }
             else {
                 player.setPlayerExperiance(player.getPlayerLevel());
